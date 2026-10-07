@@ -35,26 +35,10 @@ Every run ends with: goal, files changed, verification, verdict.
 ## ▶️ Use
 
 ```text
-/orchy "add GitHub login with tests"
+/orchy "add GitHub login with tests, my 'it works on my machine' era is over"
 ```
 
 That's it. Answer its questions if it asks, approve the plan, get reviewed code.
-
-### 😏 Example
-
-```text
-You:   /orchy "fix the bug"
-
-Orchy: cool. which bug? where? what should happen instead?
-       1. paste the error
-       2. show me the file
-       3. define "fixed"
-
-You:   "it crashes when I click save, here's the trace…"
-
-Orchy: 🔍 plan (3 steps) → 🔨 build + tests pass → 🧐 APPROVE.
-       goal, files changed, verification, verdict. receipts included.
-```
 
 ## 📁 Files
 
