@@ -30,6 +30,8 @@ Every run ends with: goal, files changed, verification, verdict.
 
 > Restart your AI session after installing.
 
+🤖 AI installing this for the user? Follow `AGENTS.md` exactly.
+
 ## ▶️ Use
 
 ```text
