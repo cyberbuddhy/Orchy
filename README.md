@@ -1,4 +1,4 @@
-# Council Orchestrator for opencode
+# Orchy for opencode
 
 Pipeline Planner → Builder → Critic para tareas mejor que un solo agente.
 
