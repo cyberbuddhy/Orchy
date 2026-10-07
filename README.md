@@ -1,8 +1,10 @@
-# Orchy for opencode
+# Orchy — AI council (Planner → Builder → Critic)
 
-Orchy is a 3-role AI council for opencode that handles prompts better than any single agent. Instead of jumping straight to code, it plans first, builds exactly what was planned, then reviews the diff before you see it.
+Orchy is a 3-role AI council that handles prompts better than any single agent. Instead of jumping straight to code, it plans first, builds exactly what was planned, then reviews the diff before you see it.
 
 **Pipeline:** Planner → Builder → Critic, coordinated by an orchestrator.
+
+Works natively in **opencode** (strictest, with real permission isolation) and **Claude Code** (twin), plus any other AI via the portable skill or a pasteable prompt.
 
 ## What is it?
 
@@ -14,7 +16,7 @@ Orchy is a 3-role AI council for opencode that handles prompts better than any s
 
 ## How to use it
 
-### Option A — per project (recommended)
+### opencode — per project (recommended)
 
 The `.opencode/` folder in this repo is already portable:
 
@@ -38,7 +40,7 @@ Or install Orchy into an existing project:
 # installs into ./.opencode, then restart opencode
 ```
 
-### Option B — global (all projects)
+### opencode — global (all projects)
 
 ```bash
 /path/to/Orchy/install.sh global
@@ -46,6 +48,20 @@ Or install Orchy into an existing project:
 ```
 
 > opencode loads config once at startup (no hot-reload). After installing or updating, quit and restart opencode.
+
+### Claude Code (twin, ~95% identical behavior)
+
+```bash
+/path/to/Orchy/install.sh claude-project  # per project → ./.claude
+/path/to/Orchy/install.sh claude-global   # all projects → ~/.claude
+```
+
+Then run `/orchy "add GitHub login with tests"`. Same pipeline, same `APPROVE / REQUEST CHANGES` verdict. Or copy manually: `.claude/agents/orchy-*.md` + `.claude/commands/orchy.md`.
+
+### Any other AI (portable)
+
+- Point it at `skills/orchy/SKILL.md` (standard Agent Skills format), or
+- Paste `prompts/orchy.md` into any chat. No setup. Single-agent roleplay of the same 3 phases (no hard permission isolation, same checklist).
 
 ### The workflow
 
@@ -59,13 +75,15 @@ Trivial requests (typo, single-line change) still run Planner-brief + Builder, w
 
 ## Contents
 
-- `.opencode/agents/council-orchestrator.md` — orchestrator (primary)
-- `.opencode/agents/council-planner.md` — PLAN phase (read-only)
-- `.opencode/agents/council-builder.md` — BUILD phase (implements + verifies)
-- `.opencode/agents/council-critic.md` — REVIEW phase (APPROVE / REQUEST CHANGES)
-- `.opencode/commands/orchy.md` — `/orchy $ARGUMENTS` command
+- `.opencode/agents/council-*.md` — native opencode council (strictest, permission-enforced)
+- `.opencode/commands/orchy.md` — `/orchy $ARGUMENTS` for opencode
+- `.claude/agents/orchy-*.md` — Claude Code twin (~95% identical)
+- `.claude/commands/orchy.md` — `/orchy $ARGUMENTS` for Claude Code
+- `skills/orchy/SKILL.md` — tool-agnostic core (standard Agent Skills format)
+- `prompts/orchy.md` — pasteable prompt for any AI chat
+- `AGENTS.md` — router: which file each AI should use
 - `opencode.json` — minimal, only `$schema`
-- `install.sh` — project or global installer
+- `install.sh` — installer: `project|global|claude-project|claude-global|all-project|all-global`
 
 ## Requirements
 
