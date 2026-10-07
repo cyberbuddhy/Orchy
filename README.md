@@ -35,7 +35,7 @@ Every run ends with: goal, files changed, verification, verdict.
 ## ▶️ Use
 
 ```text
-/orchy "add GitHub login with tests, my 'it works on my machine' era is over"
+/orchy make a website for a potato farmer
 ```
 
 That's it. Answer its questions if it asks, approve the plan, get reviewed code.
