@@ -1,9 +1,9 @@
 ---
-description: Run the AI Council (Planner -> Builder -> Critic) on your request
+description: Run Orchy, the AI council (Planner -> Builder -> Critic) on your request
 agent: council-orchestrator
 ---
 
-Run the full council pipeline on this request:
+Run Orchy, the full AI council pipeline, on this request:
 
 $ARGUMENTS
 
