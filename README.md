@@ -40,6 +40,16 @@ Every run ends with: goal, files changed, verification, verdict.
 
 That's it. Answer its questions if it asks, approve the plan, get reviewed code.
 
+### 🥔 Example: Earl's Spuds
+
+Prompt:
+
+```text
+/orchy make a website for a potato farmer
+```
+
+Result: [`examples/potato-farmer/`](examples/potato-farmer/) — a one-page site for **Earl Thompson**, 63, third-generation Idaho farmer who ate a raw Russet at age six and never looked back. He names one potato per harvest (this year's is Kevin; Kevin has a shelf). Includes his story, the season lineup, and a working order form. Open `index.html` in a browser.
+
 ## 📁 Files
 
 - `.opencode/` — native opencode setup
@@ -48,3 +58,4 @@ That's it. Answer its questions if it asks, approve the plan, get reviewed code.
 - `prompts/orchy.md` — pasteable version
 - `install.sh` — installer
 - `assets/orchy.png` — orca logo
+- `examples/potato-farmer/` — demo site built the Orchy way

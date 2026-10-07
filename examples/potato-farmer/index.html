@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Earl's Spuds — Idaho Potatoes, Grown with Feelings</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --soil: #2b1d12; --spud: #e8c872; --leaf: #4a7c3a; --cream: #faf3e3; }
+  body { font-family: Georgia, serif; background: var(--cream); color: var(--soil); }
+  header { background: var(--soil); color: var(--spud); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+  header b { font-size: 1.3rem; letter-spacing: .05em; }
+  header nav a { color: var(--cream); text-decoration: none; margin-left: 1.2rem; font-size: .9rem; }
+  .hero { text-align: center; padding: 4rem 1.5rem; background: linear-gradient(#f3e2b3, var(--cream)); }
+  .hero .tater { font-size: 4rem; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin: .5rem 0; }
+  .hero p { font-style: italic; color: #6b543a; }
+  .btn { display: inline-block; margin-top: 1.2rem; background: var(--soil); color: var(--spud); padding: .8rem 1.6rem; text-decoration: none; font-weight: bold; border-radius: 999px; }
+  section { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+  h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+  h2::before { content: "🥔 "; }
+  .story { line-height: 1.8; }
+  .story p + p { margin-top: 1rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+  .card { border: 2px solid var(--soil); border-radius: 12px; padding: 1.2rem; background: #fff; }
+  .card h3 { margin-bottom: .4rem; }
+  .card small { color: var(--leaf); font-weight: bold; }
+  .quote { border-left: 5px solid var(--spud); padding: 1rem 1.2rem; margin-top: 1rem; font-style: italic; background: #fff; }
+  form { display: flex; gap: .6rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  input, select { padding: .7rem; border: 2px solid var(--soil); border-radius: 8px; font-size: 1rem; }
+  button { background: var(--leaf); color: #fff; border: 0; border-radius: 8px; padding: .7rem 1.4rem; font-size: 1rem; font-weight: bold; cursor: pointer; }
+  #msg { margin-top: .8rem; font-weight: bold; min-height: 1.4em; }
+  footer { background: var(--soil); color: var(--cream); text-align: center; padding: 2rem 1rem; font-size: .9rem; }
+  footer em { color: var(--spud); }
+</style>
+</head>
+<body>
+<header>
+  <b>🥔 EARL'S SPUDS</b>
+  <nav><a href="#story">Story</a><a href="#spuds">Spuds</a><a href="#order">Order</a></nav>
+</header>
+
+<div class="hero">
+  <div class="tater">🥔</div>
+  <h1>Potatoes, Grown with Feelings</h1>
+  <p>Earl Thompson · third-generation farmer · Shelley, Idaho · 41 harvests and counting</p>
+  <a class="btn" href="#order">Get a crate ↓</a>
+</div>
+
+<section id="story">
+  <h2>The man behind the mud</h2>
+  <div class="story">
+    <p>Earl Thompson, 63, has loved potatoes since he was six and stole a raw Russet from his grandpa's cellar. He ate it like an apple. He has no regrets and tells this story to everyone.</p>
+    <p>Every morning at 4:40 AM, Earl walks his 40 acres, talks to the rows ("grow big, my round friends"), and names one potato per harvest. This year's chosen one is called <b>Kevin</b>. Kevin will not be eaten. Kevin has his own shelf.</p>
+    <p>"People ask why I never left Idaho," Earl says. "Have you ever held a perfect Yukon Gold at sunrise? Didn't think so."</p>
+  </div>
+  <div class="quote">"My wife left me for a corn farmer in '09. The potatoes stayed. Potatoes don't leave." — Earl</div>
+</section>
+
+<section id="spuds">
+  <h2>This season's lineup</h2>
+  <div class="grid">
+    <div class="card"><h3>Russet Burbank</h3><small>THE CLASSIC</small><p>The reliable one. Bakes like a dream, never drama. Earl's grandpa's favorite.</p></div>
+    <div class="card"><h3>Yukon Gold</h3><small>THE CHARMER</small><p>Buttery, golden, shows off at dinner. Earl winks when he says the name.</p></div>
+    <div class="card"><h3>Purple Majesty</h3><small>THE WEIRDO</small><p>Purple inside. Tastes like a potato that read poetry. Kevin's cousin.</p></div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Order a crate</h2>
+  <p>20 lbs, dug the same morning, shipped with a handwritten note from Earl (usually about the weather).</p>
+  <form id="f">
+    <input id="name" placeholder="your name" required />
+    <select id="kind"><option>Russet</option><option>Yukon Gold</option><option>Purple Majesty</option><option>Earl's choice</option></select>
+    <button>Order $25 →</button>
+  </form>
+  <p id="msg"></p>
+</section>
+
+<footer>
+  © 2026 Earl's Spuds · Shelley, Idaho · <em>"In dirt we trust."</em><br>
+  Made as a demo website. Earl, Kevin, and the corn farmer are fictitious. The love is real.
+</footer>
+
+<script>
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var n = document.getElementById('name').value || 'friend';
+    var k = document.getElementById('kind').value;
+    document.getElementById('msg').textContent =
+      'Thanks ' + n + '! Earl is digging your ' + k + ' crate right now. 🥔';
+    this.reset();
+  });
+</script>
+</body>
+</html>
