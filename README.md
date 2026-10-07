@@ -1,4 +1,4 @@
-# <img src="assets/orchy.svg" width="44" alt="Orchy"> Orchy
+# <img src="assets/orchy.png" width="60" alt="Orchy"> Orchy
 
 Three AI roles that plan before coding, then review the result. Better output than a single pass.
 
@@ -47,4 +47,4 @@ That's it. Answer its questions if it asks, approve the plan, get reviewed code.
 - `skills/orchy/SKILL.md` — portable core
 - `prompts/orchy.md` — pasteable version
 - `install.sh` — installer
-- `assets/orchy.svg` — orca icon
+- `assets/orchy.png` — orca logo
