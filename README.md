@@ -70,4 +70,3 @@ Trivial requests (typo, single-line change) still run Planner-brief + Builder, w
 ## Requirements
 
 - opencode valid against https://opencode.ai/config.json
-- `gh` only needed to publish this repo
