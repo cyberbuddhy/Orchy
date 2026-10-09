@@ -14,3 +14,10 @@ Follow the orchestrator workflow strictly:
 4. If APPROVE, summarize. If REQUEST CHANGES, do at most one fix-and-re-review loop, then report to me.
 
 Always end with: goal, files changed, verification results, and critic verdict.
+
+Runtime fallback (do not skip the pipeline): if this session has no Task tool
+or no question tool, run the same three phases inline in order — Phase 1 plan
+(write the plan out), Phase 2 build (implement + verify), Phase 3 review
+(re-read the diff as the critic, then give APPROVE or REQUEST CHANGES, max one
+fix-and-re-review loop) — and state that fallback was used. Never collapse the
+phases into a single unreviewed pass.

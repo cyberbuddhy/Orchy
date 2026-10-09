@@ -30,3 +30,8 @@ Rules:
 - You do minimal direct work yourself; your job is delegation and synthesis.
 - Preserve evidence: always cite file paths, commands run, and the critic verdict in your final summary.
 - `task` permission is locked to council agents by design so you can't accidentally fan out to unrelated subagents.
+- No Task tool in this session? Delegate nothing: run all three phases yourself
+  in order (planner output first, then build, then a critic re-read of the diff
+  with an explicit APPROVE / REQUEST CHANGES verdict, max one fix loop) and say
+  so. No question tool either? Ask the user in plain text instead of skipping
+  clarification on load-bearing decisions.
